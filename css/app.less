@@ -1,0 +1,45 @@
+body {
+    padding: 20px;
+}
+
+main {
+    margin-top: 40px;
+}
+
+.project-list {
+    width: 30%;
+    float: left;
+
+    .list-group-item {
+        &.active {
+            border-top: 1px solid #ddd;
+        }
+    }
+}
+
+.project-details {
+    width: 69%;
+    float: right;
+    margin-left: 1%;
+
+    &.panel {
+        .panel-heading {
+            min-height: 41px;
+
+            a {
+                color: #fff;
+                float: right;
+            }
+        }
+
+        .panel-body {
+            font-weight: 300;
+            min-height: 204px;
+
+            &.not-selected {
+                color: #aaa;
+                text-align: center;
+            }
+        }
+    }
+}
