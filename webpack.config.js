@@ -1,5 +1,6 @@
+const path = require('path');
+
 module.exports = {
-    devtool: 'source-map',
     entry: './src/js/main.js',
     output: {
         path: './',
@@ -10,13 +11,22 @@ module.exports = {
         port: 3333
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015', 'react']
+        loaders: [
+            {
+                loader: "babel-loader",
+                include: [path.resolve(__dirname, "src/js")]
             }
-        }]
-    }
+        ]
+    },
+    devtool: '#inline-source-map'
+    // module: {
+    //     loaders: [{
+    //         test: /\.js$/,
+    //         exclude: /node_modules/,
+    //         loader: 'babel',
+    //         query: {
+    //             presets: ['es2015', 'react']
+    //         }
+    //     }]
+    // }
 };
