@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import MainNav from '../infrastructure/mainNav/MainNav';
 
-class App extends React.Component {
+class App extends Component {
     render() {
-        return <h1>Hello World</h1>
+        return (
+            <div>
+                <MainNav />
+
+                {this.props.children}
+            </div>
+        )
     }
 }
 
