@@ -1,46 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
-class MainNav extends Component {
-    render() {
-        return (
-            <nav className="main-nav">
-                <ul>
-                {
-                    this.props.items.map(item =>(
-                            <li key={item.url}>
-                                <Link to={item.url} onClick={() => this.props.onItemClick(item.url)}>
-                                    {item.label}
-                                </Link>
-                            </li>
-                        )
-                    )
-                }
-                </ul>
-            </nav>
-        );
-    }
-};
-
-const mapStateToProps = (state) => {
-    return {
-        items: state.mainNav
-    } 
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onItemClick: (url) => {
-            dispatch(actions.navigate(url))
+const MainNav = ({ items, onItemClick }) => (
+    <nav className="main-nav">
+        <ul>
+        {
+            items.map(item =>(
+                    <li key={ item.url }>
+                        <Link to={ item.url } onClick={ () => onItemClick(item.url) }>
+                            { item.label }
+                        </Link>
+                    </li>
+                )
+            )
         }
+        </ul>
+    </nav>
+);
+
+export default connect(
+    state => ({
+        items: state.mainNav
+    }),
+
+    {
+        onItemClick: actions.navigate
     }
-};
-
-MainNav = connect(
-    mapStateToProps,
-    mapDispatchToProps
 )(MainNav);
-
-export default MainNav;

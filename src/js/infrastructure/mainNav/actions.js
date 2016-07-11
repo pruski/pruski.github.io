@@ -1,6 +1,6 @@
-export const navigate = (url) => {
-    return {
-        type: "NAVIGATE",
-        url
-    }
-};
+import actionTypes from './actionTypes';
+
+export const navigate = url => ({
+    type: actionTypes.NAVIGATE,
+    url
+});
