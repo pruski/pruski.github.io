@@ -11,6 +11,12 @@ export default (state = initialState, action) => {
                 ...state,
                 renderMessage: true
             };
+        
+        case actionTypes.ON_EXIT:
+            return {
+                ...state,
+                renderMessage: false
+            };
 
         default:
             return state;
