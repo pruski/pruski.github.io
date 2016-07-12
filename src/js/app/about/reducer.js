@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import * as actionTypes from './actionTypes';
 import cvDownloader from './cvDownloader';
 
 const initialState = {};
