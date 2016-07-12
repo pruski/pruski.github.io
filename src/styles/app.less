@@ -29,8 +29,17 @@ header {
                 }
             }
 
-            a:focus {
-                text-decoration: none;
+            &.active {
+                a {
+                    color: #23527c;
+                }
+            }
+
+            a {
+
+                &:focus {
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -42,6 +51,33 @@ header {
     height: 1030px;
     margin: 0 auto;
     display: block;
+}
+
+.download-links {
+    text-align: center;
+    margin: 10px 0;
+
+    .fa {
+        margin-left: 5px;
+    }
+
+    .btn-sm {
+        color: #999;
+
+        &:before {
+            margin-right: 4px;
+            content: '//';
+            color: #999;
+        }
+
+        &:hover {
+            text-decoration: none;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .project-list {

@@ -1,5 +1,10 @@
 import React from 'react';
+import { documentId } from './constants';
+import CvDownloader from './cvDownloader/CvDownloader';
 
 export default () => (
-    <iframe className="cv" frameBorder="0" src="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1wLXXddjAlA3LuldTJQse2pA9SinlXql-ewhuCHJE7dA/export?format%3Dpdf&embedded=true"></iframe>
+    <div>
+        <CvDownloader documentId={documentId} />
+        <iframe className="cv" frameBorder="0" src={`https://docs.google.com/viewer?url=https://docs.google.com/document/d/${documentId}/export?format=pdf&embedded=true`}></iframe>
+    </div>
 );

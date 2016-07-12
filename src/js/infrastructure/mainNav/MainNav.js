@@ -8,7 +8,7 @@ const MainNav = ({ items, onItemClick }) => (
         <ul>
         {
             items.map(item =>(
-                    <li key={ item.url }>
+                    <li key={ item.url } className={ item.active ? 'active' : '' }>
                         <Link to={ item.url } onClick={ () => onItemClick(item.url) }>
                             { item.label }
                         </Link>

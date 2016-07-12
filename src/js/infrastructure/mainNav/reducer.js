@@ -1,4 +1,4 @@
-import actionTypes from './actionTypes';
+import * as actionTypes from './actionTypes';
 
 const initialState = [
     {
@@ -10,7 +10,7 @@ const initialState = [
         url: 'projects',
         label: 'Projects',
         active: false
-    }, 
+    },
     {
         url: 'contact',
         label: 'Contact',
@@ -21,10 +21,10 @@ const initialState = [
 export default (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.NAVIGATE:
-            return state.map( item => Object.assign({}, item, {
-                    active: item.url === action.url ? true : false
-                })
-            );
+            return state.map( item => ({
+                ...item,
+                active: item.url === action.url
+            }));
 
         default:
             return state;

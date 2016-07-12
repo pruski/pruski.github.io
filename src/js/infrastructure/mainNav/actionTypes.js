@@ -1,3 +1,1 @@
-export default {
-    NAVIGATE: "mainNav/NAVIGATE"
-};
+export const NAVIGATE = "mainNav/NAVIGATE";
