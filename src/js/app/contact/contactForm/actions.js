@@ -5,3 +5,7 @@ export const onUpdateField = (id, value) => ({
     value,
     id
 });
+
+export const resetFields = () => ({
+    type: actionTypes.RESET_FIELD_VALUES
+});

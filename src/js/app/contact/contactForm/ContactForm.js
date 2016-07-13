@@ -1,16 +1,30 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import FormField from './formField/FormField';
 import * as actions from './actions';
 import * as constants from './constants';
 
-const ContactForm = ({ onUpdateField, sendable }) => (
-    <form className="contact-form">
-        { constants.formConfig.map( field => (
-            <FormField key={field.id} config={field} onUpdate={ (value) => onUpdateField(field.id, value) } />
-        ))}
-        <button disabled={!sendable}>{ sendable ? 'Send' : 'All fields are required' }</button>
-    </form>
-);
+class ContactForm extends Component {
+    componentWillUnmount() {
+        this.props.resetFields();
+    }
+    
+    render() {
+        const {onUpdateField, sendable, values} = this.props;
+        
+        return (
+            <form className="contact-form">
+                { constants.formConfig.map(field => (
+                    <FormField key={field.id}
+                               config={field}
+                               value={values[field.id]}
+                               onUpdate={(value) => onUpdateField(field.id, value)}/>
+                ))}
+                <button disabled={!sendable}>{ sendable ? 'Send' : 'All fields are required' }</button>
+            </form>
+        );
+    }
+}
+    
 
 export default connect(state => state.contact.contactForm, actions)(ContactForm);

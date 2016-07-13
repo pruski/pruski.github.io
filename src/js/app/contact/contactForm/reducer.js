@@ -3,7 +3,7 @@ import { formConfig } from './constants'
 
 const initialState = {
     sendable: false,
-    values: {}
+    values: formConfig.reduce((result, field) => ({...result, [field.id]: ''}), {})
 };
 
 export default (state = initialState, action) => {
@@ -18,6 +18,9 @@ export default (state = initialState, action) => {
                 values,
                 sendable: formConfig.reduce((result, field) => result && values[field.id] && values[field.id].length >= 3, true)
             };
+
+        case actionTypes.RESET_FIELD_VALUES:
+            return initialState;
 
         default:
             return state;
