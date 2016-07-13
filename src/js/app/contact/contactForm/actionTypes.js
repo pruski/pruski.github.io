@@ -1,0 +1,1 @@
+export const UPDATE_FIELD_VALUE = "contactForm/UPDATE_FIELD_VALUE";

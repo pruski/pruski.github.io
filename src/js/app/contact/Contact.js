@@ -1,9 +1,16 @@
 import React from 'react';
+import ContactForm from './contactForm/ContactForm';
 
-class Contact extends React.Component {
-    render() {
-        return <h1>Contact</h1>
+export default ({ sent }) => {
+    if (sent) {
+        return (
+            <div className="message-sent">
+                Your message has been sent
+                <div className="fa fa-paper-plane-o"></div>
+                Thank you
+            </div>
+        )
     }
-}
 
-export default Contact;
+    return <ContactForm />
+};
