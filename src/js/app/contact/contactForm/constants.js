@@ -2,7 +2,8 @@ export const formConfig = [
     {
         id: "name",
         InputType: "input",
-        placeholder: "Your name"
+        placeholder: "Your name",
+        autofocus: true
     },
     {
         id: "email",
