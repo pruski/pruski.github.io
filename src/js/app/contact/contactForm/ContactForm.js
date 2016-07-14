@@ -8,12 +8,16 @@ class ContactForm extends Component {
     componentWillUnmount() {
         this.props.resetFields();
     }
+
+    submit(event) {
+        event.preventDefault();
+    }
     
     render() {
         const {onUpdateField, sendable, values} = this.props;
         
         return (
-            <form className="contact-form">
+            <form onSubmit={(e) => this.submit(e)} className="contact-form">
                 { constants.formConfig.map(field => (
                     <FormField key={field.id}
                                config={field}
