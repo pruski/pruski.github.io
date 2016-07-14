@@ -4,6 +4,7 @@
         "react"
     ],
     "plugins": [
+        "babel-plugin-transform-decorators-legacy",
         "transform-runtime",
         "transform-object-rest-spread",
         ["transform-es2015-modules-commonjs-simple", {

@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
+@connect(state => ({...state.about.cvDownloader}), actions)
 class CvDownloader extends Component {
     componentWillUnmount() {
         this.props.onExit();
@@ -42,4 +43,4 @@ class CvDownloader extends Component {
 }
 
 
-export default connect(state => ({...state.about.cvDownloader}), actions)(CvDownloader);
+export default CvDownloader;

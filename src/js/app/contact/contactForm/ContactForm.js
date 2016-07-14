@@ -4,6 +4,7 @@ import FormField from './formField/FormField';
 import * as actions from './actions';
 import * as constants from './constants';
 
+@connect(state => state.contact.contactForm, actions)
 class ContactForm extends Component {
     componentWillUnmount() {
         this.props.resetFields();
@@ -31,4 +32,4 @@ class ContactForm extends Component {
 }
     
 
-export default connect(state => state.contact.contactForm, actions)(ContactForm);
+export default ContactForm;
