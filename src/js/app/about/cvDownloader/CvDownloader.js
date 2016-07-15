@@ -29,16 +29,16 @@ class CvDownloader extends Component {
             );
 
         }
-
         return (
             <div className="download-links">
                 <a className="btn btn-link" href={`https://docs.google.com/document/export?format=pdf&id=${documentId}`}
                    onClick={ () => onDownload() }>
                     Get a copy
-                    <span className="fa fa-cloud-download"></span>
+                    <span className="fa fa-file-pdf-o"></span>
                 </a>
             </div>
         );
+
     }
 }
 

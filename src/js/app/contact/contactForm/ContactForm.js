@@ -12,6 +12,8 @@ class ContactForm extends Component {
 
     submit(event) {
         event.preventDefault();
+        
+        this.props.onSubmit(this.props.values);
     }
     
     render() {
