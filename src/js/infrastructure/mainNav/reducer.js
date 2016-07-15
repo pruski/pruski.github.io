@@ -3,17 +3,17 @@ import * as actionTypes from './actionTypes';
 const initialState = [
     {
         url: 'about',
-        label: 'About',
+        label: 'about',
         active: true
     },
     {
-        url: 'projects',
-        label: 'Projects',
+        url: 'code',
+        label: 'code',
         active: false
     },
     {
         url: 'contact',
-        label: 'Contact',
+        label: 'contact',
         active: false
     }
 ];

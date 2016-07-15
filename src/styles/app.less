@@ -1,3 +1,5 @@
+@primary-color: #337ab7;
+
 *, h1, h2, h3, h4, h5, h6, .btn-link, .btn {
     font-weight: 200;
 }
@@ -13,8 +15,6 @@ header {
 }
 
 .main-nav {
-    margin-top: 3px;
-    
     ul {
         list-style-type: none;
         padding-left: 2px;
@@ -24,7 +24,7 @@ header {
             display: inline-block;
 
             &:not(:first-child) {
-                margin-left: 11px;
+                margin-left: 12px;
 
                 &:before {
                     margin-right: 10px;
@@ -35,14 +35,34 @@ header {
 
             &.active {
                 a {
-                    color: #23527c;
+                    position: relative;
+
+                    &:hover {
+                        color: @primary-color;
+                        cursor: default;
+                        text-decoration: none;
+                    }
+
+                    &:after {
+                        color: #999;
+                        content: '..';
+                        position: absolute;
+                        top: 6px;
+                        left: 50%;
+                        margin-left: -4px;
+                    }
+
+                    &:focus {
+                        text-decoration: none;
+                    }
                 }
             }
 
             a {
+                font-size: 19px;
 
                 &:focus {
-                    text-decoration: none;
+                    color: @primary-color;
                 }
             }
         }
@@ -55,6 +75,13 @@ header {
     height: 1030px;
     margin: 0 auto;
     display: block;
+}
+
+.hide-frame {
+    .cv {
+        visibility: hidden;
+        position: absolute;
+    }
 }
 
 .download-links {
@@ -343,7 +370,7 @@ header {
     top: 20px;
     left: 20px;
     border-radius: 80px;
-    box-shadow: 0 6px 0 0 #337ab7;
+    box-shadow: 0 6px 0 0 @primary-color;
     -ms-animation: uil-ring-anim 1s linear infinite;
     -moz-animation: uil-ring-anim 1s linear infinite;
     -webkit-animation: uil-ring-anim 1s linear infinite;
