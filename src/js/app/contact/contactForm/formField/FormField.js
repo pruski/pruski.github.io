@@ -5,6 +5,7 @@ class FormField extends Component {
     constructor() {
         super();
 
+        this.dirty = false;
         this.handleChange = debounce(this.handleChange, 300);
     }
 
@@ -12,12 +13,34 @@ class FormField extends Component {
         this.props.onUpdate(value);
     }
 
-    render() {
-        const {config: {InputType, placeholder, autofocus}} = this.props;
+    handleBlur() {
+        this.dirty = true;
+        this.forceUpdate();
+    }
 
-        return <InputType placeholder={placeholder}
-                          autoFocus={autofocus}
-                          onChange={(event) => this.handleChange(event.target.value)}/>;
+    render() {
+        const {
+            valid,
+            config: {
+                InputType,
+                placeholder,
+                autofocus,
+                validation: {
+                    errorMessage
+                }
+            }
+        } = this.props;
+
+        return (
+            <div className={!valid && this.dirty ? 'form-field error' : 'form-field'}>
+                <label>{errorMessage}</label>
+                <InputType placeholder={placeholder}
+                           autoFocus={autofocus}
+                           onChange={(event) => this.handleChange(event.target.value)}
+                           onBlur={() => this.handleBlur()}
+                           className={!valid && this.dirty ? 'error' : ''}/>
+            </div>
+        );
     }
 }
 

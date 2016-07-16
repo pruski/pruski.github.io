@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import { address } from './constants';
+import { address } from './formConfig';
 import 'whatwg-fetch';
 
 export const onUpdateField = (id, value) => ({
@@ -10,4 +10,8 @@ export const onUpdateField = (id, value) => ({
 
 export const resetFields = () => ({
     type: actionTypes.RESET_FIELD_VALUES
+});
+
+export const validate = () => ({
+    type: actionTypes.VALIDATE_FORM
 });

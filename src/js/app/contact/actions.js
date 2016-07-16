@@ -36,6 +36,6 @@ export const sendMessage = (formData) => (dispatch) => {
                 dispatch(error());
             }
         },
-        error => dispatch(error())
+        () => dispatch(error())
     );
 };

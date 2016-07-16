@@ -1,22 +1,32 @@
 import * as actionTypes from './actionTypes';
-import { formConfig } from './constants'
+import * as validators from './validators';
+import formConfig, {getField} from './formConfig'
 
 const initialState = {
-    sendable: false,
-    values: formConfig.reduce((result, field) => ({...result, [field.id]: ''}), {})
+    valid: false,
+    fields: formConfig.reduce((all, field) => ({
+        ...all,
+        [field.id]: {
+            value: '',
+            valid: validators[field.validation.type]('')
+        }
+    }), {})
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.UPDATE_FIELD_VALUE:
-            const values = {
-                ...state.values,
-                [action.id]: action.value
+            const fields = {
+                ...state.fields,
+                [action.id]: {
+                    valid: validators[getField(action.id).validation.type](action.value),
+                    value: action.value
+                }
             };
 
             return {
-                values,
-                sendable: formConfig.reduce((result, field) => result && values[field.id] && values[field.id].length >= 3, true)
+                fields,
+                valid: formConfig.reduce((result, field) => result && fields[field.id].valid, true)
             };
 
         case actionTypes.RESET_FIELD_VALUES:
