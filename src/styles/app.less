@@ -1,4 +1,5 @@
-@primary-color: #337ab7;
+@primary: #337ab7;
+@primary-dark: #23527c;
 
 *, h1, h2, h3, h4, h5, h6, .btn-link, .btn {
     font-weight: 200;
@@ -38,18 +39,18 @@ header {
                     position: relative;
 
                     &:hover {
-                        color: @primary-color;
+                        color: @primary;
                         cursor: default;
                         text-decoration: none;
                     }
 
                     &:after {
-                        color: #999;
+                        color: @primary-dark;
                         content: '..';
                         position: absolute;
                         top: 6px;
                         left: 50%;
-                        margin-left: -4px;
+                        margin-left: -6px;
                     }
 
                     &:focus {
@@ -62,31 +63,47 @@ header {
                 font-size: 19px;
 
                 &:focus {
-                    color: @primary-color;
+                    color: @primary;
                 }
             }
         }
     }
 }
 
-.cv {
-    width: 100%;
-    max-width: 800px;
-    height: 1030px;
-    margin: 0 auto;
-    display: block;
-}
+.about {
+    margin-top: 60px;
+    text-align: center;
 
-.hide-frame {
-    .cv {
-        visibility: hidden;
-        position: absolute;
+    .loader-info {
+        color: #999;
+        font-size: 16px;
+        display: inline-block;
+        padding-top: 18px;
+
+        &:before {
+            margin-right: 4px;
+            content: '//';
+            color: #999;
+        }
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 1030px;
+        margin: 0 auto;
+        display: block;
+
+        &.hide-frame {
+            visibility: hidden;
+            position: absolute;
+        }
     }
 }
 
 .download-links {
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0;
 
     a {
         font-size: 16px;
@@ -370,7 +387,7 @@ header {
     top: 20px;
     left: 20px;
     border-radius: 80px;
-    box-shadow: 0 6px 0 0 @primary-color;
+    box-shadow: 0 6px 0 0 @primary;
     -ms-animation: uil-ring-anim 1s linear infinite;
     -moz-animation: uil-ring-anim 1s linear infinite;
     -webkit-animation: uil-ring-anim 1s linear infinite;

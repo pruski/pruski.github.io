@@ -15,10 +15,11 @@ class CvDownloader extends Component {
         if (renderMessage) {
             return (
                 <div className="download-links">
-                    <Link to="/contact">
-                        Looking forward to hearing from you
+                    <Link className="btn btn-link" to="/contact">
+                        I'm looking forward to hearing from you
                         <span className="fa fa-envelope-o"></span>
                     </Link>
+                    
                     <div>
                         <a className="btn btn-link btn-sm"
                            href={`https://docs.google.com/document/export?format=pdf&id=${documentId}`}>
@@ -31,7 +32,8 @@ class CvDownloader extends Component {
         }
         return (
             <div className="download-links">
-                <a className="btn btn-link" href={`https://docs.google.com/document/export?format=pdf&id=${documentId}`}
+                <a className="btn btn-link"
+                   href={`https://docs.google.com/document/export?format=pdf&id=${documentId}`}
                    onClick={ () => onDownload() }>
                     Get a copy
                     <span className="fa fa-file-pdf-o"></span>
