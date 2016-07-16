@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
+import debounce from 'debounce';
 
-export default ({config: {InputType, placeholder, autofocus}, value, onUpdate}) =>
-    <InputType placeholder={placeholder}
-               autoFocus={autofocus}
-               value={value}
-               onChange={(event) => onUpdate(event.target.value)} />;
+class FormField extends Component {
+    constructor() {
+        super();
+
+        this.handleChange = debounce(this.handleChange, 300);
+    }
+
+    handleChange(value) {
+        this.props.onUpdate(value);
+    }
+
+    render() {
+        const {config: {InputType, placeholder, autofocus}} = this.props;
+
+        return <InputType placeholder={placeholder}
+                          autoFocus={autofocus}
+                          onChange={(event) => this.handleChange(event.target.value)}/>;
+    }
+}
+
+export default FormField;

@@ -1,5 +1,6 @@
 @primary: #337ab7;
 @primary-dark: #23527c;
+@error: #c9302c;
 
 *, h1, h2, h3, h4, h5, h6, .btn-link, .btn {
     font-weight: 200;
@@ -184,28 +185,28 @@ header {
 
 .message-sent,
 .message-failed {
-    margin-top: 200px;
+    margin-top: 150px;
     text-align: center;
 
     .fa {
         margin-right: 8px;
     }
 
-    h5 {
-        margin-top: 12px;
+    h4 {
+        margin-top: 20px;
     }
 }
 
 .message-failed {
-    h4 {
-        color: #d9534f;
+    h3 {
+        color: @error;
     }
 }
 
 .message-sent {
     .fa {
-        position: relative;
-        top: -1px;
+        font-size: 30px;
+        margin-top: 20px;
     }
 }
 

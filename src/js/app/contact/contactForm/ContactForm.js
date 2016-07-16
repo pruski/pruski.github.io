@@ -17,8 +17,8 @@ class ContactForm extends Component {
     }
     
     render() {
-        const {onUpdateField, sendable, values} = this.props;
-        
+        const {sendable, onUpdateField} = this.props;
+
         return (
             <div className="contact-form">
                 <h3>Let's do something great together.</h3>
@@ -27,7 +27,6 @@ class ContactForm extends Component {
                     { constants.formConfig.map(field => (
                         <FormField key={field.id}
                                    config={field}
-                                   value={values[field.id]}
                                    onUpdate={(value) => onUpdateField(field.id, value)}/>
                     ))}
                     <button disabled={!sendable}>{ sendable ? 'Send' : 'All fields are required' }</button>
