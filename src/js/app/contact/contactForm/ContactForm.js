@@ -20,15 +20,19 @@ class ContactForm extends Component {
         const {onUpdateField, sendable, values} = this.props;
         
         return (
-            <form onSubmit={(e) => this.submit(e)} className="contact-form">
-                { constants.formConfig.map(field => (
-                    <FormField key={field.id}
-                               config={field}
-                               value={values[field.id]}
-                               onUpdate={(value) => onUpdateField(field.id, value)}/>
-                ))}
-                <button disabled={!sendable}>{ sendable ? 'Send' : 'All fields are required' }</button>
-            </form>
+            <div className="contact-form">
+                <h3>Let's do something great together.</h3>
+
+                <form onSubmit={(e) => this.submit(e)}>
+                    { constants.formConfig.map(field => (
+                        <FormField key={field.id}
+                                   config={field}
+                                   value={values[field.id]}
+                                   onUpdate={(value) => onUpdateField(field.id, value)}/>
+                    ))}
+                    <button disabled={!sendable}>{ sendable ? 'Send' : 'All fields are required' }</button>
+                </form>
+            </div>
         );
     }
 }
