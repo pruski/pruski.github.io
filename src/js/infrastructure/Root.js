@@ -11,16 +11,16 @@ const Root = ({ store }) => (
         <Router history={browserHistory}>
             <Route component={App}>
                 <Redirect from="/" to="/about" />
-                <Route path="/about" component={About} />
-                <Route path="/code" component={Code} />
-                <Route path="/contact" component={Contact} />
+                <Route name="about" path="/about" component={About} />
+                <Route name="code" path="/code" component={Code} />
+                <Route name="contact" path="/contact" component={Contact} />
             </Route>
         </Router>
     </Provider>
 );
 
 Root.propTypes = {
-    store: PropTypes.object.isRequired,
+    store: PropTypes.object.isRequired
 };
 
 export default Root;
