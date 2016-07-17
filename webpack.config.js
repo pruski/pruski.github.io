@@ -6,6 +6,11 @@ module.exports = {
         path: './',
         filename: 'bundle.js'
     },
+    resolve: {
+        root: [
+            path.resolve('./src/js')
+        ]
+    },
     devServer: {
         inline: true,
         port: 3333,
