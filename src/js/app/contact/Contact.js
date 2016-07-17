@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {HorizontalLoader} from 'infrastructure';
-import ContactForm from './contactForm/ContactForm';
-import SuccessMessage from './successMessage/SuccessMessage';
-import ErrorMessage from './errorMessage/ErrorMessage';
+import ContactForm from './contactForm';
+import SuccessMessage from './successMessage';
+import ErrorMessage from './errorMessage';
 import * as actions from './actions';
 import * as constants from './constants';
 

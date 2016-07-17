@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import cvDownloader from './cvDownloader';
+import {reducer as cvDownloader} from './cvDownloader';
 import * as actionTypes from './actionTypes';
 
 const initialState = {
@@ -23,5 +23,5 @@ const about = (state = initialState, action) => {
 
 export default combineReducers({
     about,
-    cvDownloader: cvDownloader.reducer
+    cvDownloader
 });

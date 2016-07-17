@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import contactForm from './contactForm';
+import {reducer as contactForm} from './contactForm';
 import * as actionTypes from './actionTypes';
 import * as constnats from './constants';
 
@@ -26,5 +26,5 @@ const contact = (state = initialState, action) => {
 
 export default combineReducers({
     contact,
-    contactForm: contactForm.reducer
+    contactForm
 });

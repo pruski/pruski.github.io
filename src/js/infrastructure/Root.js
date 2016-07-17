@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, Redirect, browserHistory } from 'react-router';
 import App from 'app/App';
-import About from 'app/about/About';
-import Code from 'app/code/Code';
-import Contact from 'app/contact/Contact';
+import About from 'app/about';
+import Code from 'app/code';
+import Contact from 'app/contact';
 
 const Root = ({ store }) => (
     <Provider store={store}>

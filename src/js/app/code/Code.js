@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {HorizontalLoader} from 'infrastructure';
 import * as constants from './constants';
 import * as actions from './actions';
-import ErrorMessage from './errorMessage/ErrorMessage';
+import ErrorMessage from './errorMessage';
 
 @connect(state => state.code, actions)
 class Code extends Component {

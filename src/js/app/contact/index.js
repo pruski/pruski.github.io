@@ -1,5 +1,7 @@
 import * as actions from './actions';
 import * as actionsTypes from './actionTypes';
 import reducer from './reducer';
+import Contact from './Contact';
 
-export default { actions, actionsTypes, reducer };
+export default Contact;
+export { actions, actionsTypes, reducer };

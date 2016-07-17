@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { documentId } from './constants';
-import CvDownloader from './cvDownloader/CvDownloader';
+import CvDownloader from './cvDownloader';
 import * as actions from './actions';
-import CvLoader from './cvLoader/CvLoader';
+import CvLoader from './cvLoader';
 
 @connect(state => state.about.about, actions)
 class About extends Component {

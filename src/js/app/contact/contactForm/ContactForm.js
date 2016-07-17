@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import map from 'object.map';
-import FormField from './formField/FormField';
+import FormField from './formField';
 import * as actions from './actions';
 import formConfig from './formConfig';
 
-@connect(state => state.contact.contactForm, actions)
+@connect(state => {
+    return state.contact.contactForm
+}, actions)
 class ContactForm extends Component {
     componentWillUnmount() {
         this.props.resetFields();
