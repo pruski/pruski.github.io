@@ -1,6 +1,5 @@
 import * as actionTypes from './actionTypes';
 import { address } from './formConfig';
-import 'whatwg-fetch';
 
 export const onUpdateField = (id, value) => ({
     type: actionTypes.UPDATE_FIELD_VALUE,
