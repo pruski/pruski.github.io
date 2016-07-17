@@ -1,18 +1,24 @@
 import React, {Component} from 'react';
-import debounce from 'debounce';
+import Debounce from 'debounce-decorator';
 
 class FormField extends Component {
     constructor() {
         super();
 
         this.dirty = false;
-        this.handleChange = debounce(this.handleChange, 300);
     }
 
+    componentWillUnmount() {
+        this.handleBlur.clear();
+        this.handleChange.clear();
+    }
+
+    @Debounce(300)
     handleChange(value) {
         this.props.onUpdate(value);
     }
 
+    @Debounce(300)
     handleBlur() {
         this.dirty = true;
         this.forceUpdate();
