@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {HorizontalLoader} from 'infrastructure';
+import {HorizontalLoader, ErrorMessage} from 'infrastructure';
 import * as constants from './constants';
 import * as actions from './actions';
-import ErrorMessage from './errorMessage';
 
 @connect(state => state.code, actions)
 class Code extends Component {
@@ -22,7 +21,11 @@ class Code extends Component {
                 break;
 
             case constants.SHOW_ERROR:
-                component = <ErrorMessage onRetryClick={() => fetchRepos()} />;
+                component = (
+                    <ErrorMessage>
+                        Please <button onClick={() => fetchRepos()} className="btn btn-link btn-inline">try again</button>.
+                    </ErrorMessage>
+                );
                 break;
 
             case constants.SHOW_PROJECTS:

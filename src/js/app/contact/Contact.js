@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {HorizontalLoader} from 'infrastructure';
+import {HorizontalLoader, ErrorMessage} from 'infrastructure';
 import ContactForm from './contactForm';
 import SuccessMessage from './successMessage';
-import ErrorMessage from './errorMessage';
 import * as actions from './actions';
 import * as constants from './constants';
 
@@ -22,7 +21,11 @@ class Contact extends Component {
                 return <SuccessMessage />;
             
             case constants.SHOW_ERROR_MESSAGE:
-                return <ErrorMessage address={constants.address} />;
+                return (
+                    <ErrorMessage>
+                        Please try <a href="https://uk.linkedin.com/in/konradpruski">the other way</a>.
+                    </ErrorMessage>
+                );
             
             case constants.SHOW_LOADER:
                 return <HorizontalLoader />;
