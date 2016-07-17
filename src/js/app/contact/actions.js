@@ -1,20 +1,20 @@
 import {address} from './constants';
-import * as actionsTypes from './actionTypes';
+import * as actionTypes from './actionTypes';
 
 export const reset = () => ({
-    type: actionsTypes.RESET
+    type: actionTypes.RESET
 });
 
 export const messageSent = () => ({
-    type: actionsTypes.SUCCESS
+    type: actionTypes.SUCCESS
 });
 
 export const error = () => ({
-    type: actionsTypes.ERROR
+    type: actionTypes.ERROR
 });
 
 export const sendMessage = (formData) => (dispatch) => {
-    dispatch({type: actionsTypes.SENDING});
+    dispatch({type: actionTypes.SENDING});
 
     fetch('https://formspree.io/' + address.split("").reverse().join(""), {
         method: 'post',
