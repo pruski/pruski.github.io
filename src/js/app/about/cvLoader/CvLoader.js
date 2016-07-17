@@ -1,5 +1,5 @@
 import React from 'react';
-import HorizontalLoader from 'infrastructure/horizontalLoader/HorizontalLoader';
+import {HorizontalLoader} from 'infrastructure';
 
 export default () => (
     <div>

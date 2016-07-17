@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import HorizontalLoader from 'infrastructure/horizontalLoader/HorizontalLoader';
+import {HorizontalLoader} from 'infrastructure';
 import ContactForm from './contactForm/ContactForm';
 import SuccessMessage from './successMessage/SuccessMessage';
 import ErrorMessage from './errorMessage/ErrorMessage';
