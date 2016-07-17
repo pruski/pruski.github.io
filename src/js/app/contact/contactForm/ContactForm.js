@@ -5,9 +5,7 @@ import FormField from './formField';
 import * as actions from './actions';
 import formConfig from './formConfig';
 
-@connect(state => {
-    return state.contact.contactForm
-}, actions)
+@connect(state => state.contact.contactForm, actions)
 class ContactForm extends Component {
     componentWillUnmount() {
         this.props.resetFields();
@@ -27,7 +25,7 @@ class ContactForm extends Component {
                 <h3>Let's do something great together.</h3>
 
                 <form onSubmit={(e) => this.submit(e)}>
-                    { formConfig.map(field => (
+                    {formConfig.map(field => (
                         <FormField key={field.id}
                                    config={field}
                                    valid={fields[field.id].valid}
