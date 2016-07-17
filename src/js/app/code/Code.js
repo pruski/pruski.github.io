@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import HorizontalLoader from '../../infrastructure/horizontalLoader/HorizontalLoader';
+import HorizontalLoader from 'infrastructure/horizontalLoader/HorizontalLoader';
 import * as constants from './constants';
 import * as actions from './actions';
 import ErrorMessage from './errorMessage/ErrorMessage';

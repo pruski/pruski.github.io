@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MainNav from '../infrastructure/mainNav/MainNav';
+import MainNav from 'infrastructure/mainNav/MainNav';
 
 class App extends Component {
     render() {
