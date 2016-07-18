@@ -1,5 +1,6 @@
 import React from 'react';
 import marked from 'marked';
+import {formatDuration} from 'utils';
 
 marked.setOptions({
     renderer: new marked.Renderer(),
@@ -27,10 +28,12 @@ export default ({details}) => {
             <div className="panel panel-default">
                 <div className="panel-heading clearfix">
                     <span className="panel-title pull-left">
-                        <a href={details.url}>
+                        <a href={details.url} className="github-link">
                             <span className="octicon octicon-mark-github"></span>
-                            view source
+                            {details.id}
                         </a>
+                        {' '}
+                        updated {formatDuration(details.updated)} ago
                     </span>
                     {!details.parent ? '' : (
                         <span className="panel-title pull-right">

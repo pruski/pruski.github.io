@@ -22,15 +22,16 @@ const fetchParent = repo => fetchJson('https://api.github.com/repos/pruski/' + r
 
 const fetchReadme = repo => fetchJson('https://github-raw-cors-proxy.herokuapp.com/' + repo.full_name + '/' + repo.default_branch + '/README.md')
     .then(readme => ({
-        ...parseRepoDetails(repo),
+        ...formatRepoDetails(repo),
         readme
     }));
 
-const parseRepoDetails = repo => {
+const formatRepoDetails = repo => {
     return {
         id: repo.name,
         name: repo.name.replace(/-/g, ' '),
-        url: repo.html_url
+        url: repo.html_url,
+        updated: repo.updated_at
     }
 };
 
