@@ -14,28 +14,24 @@ class Code extends Component {
     
     render() {
         const {ui, repos, fetchRepos, selectedRepo} = this.props;
-
-        let component = null;
-
+        
         switch(ui) {
             case constants.SHOW_LOADER:
-                component = <HorizontalLoader />;
-                break;
+                return <HorizontalLoader />;
 
             case constants.SHOW_ERROR:
-                component = (
+                return (
                     <ErrorMessage>
                         Please <button onClick={() => fetchRepos()} className="btn btn-link btn-inline">try again</button>.
                     </ErrorMessage>
                 );
-                break;
 
             case constants.SHOW_REPOS:
-                component = <Repos repos={repos} selected={selectedRepo}/>;
-                break;
-        }
+                return <Repos repos={repos} selected={selectedRepo}/>;
 
-        return component;
+            default:
+                return null;
+        }
     }
 }
 
