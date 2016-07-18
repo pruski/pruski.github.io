@@ -254,7 +254,21 @@ body {
             &.active {
                 &:after {
                     border-color: #bbb;
-                    border-width: 2px;                }
+                    border-width: 2px;
+                }
+
+                a {
+                    &:hover {
+                        color: @primary;
+                        cursor: default;
+                        text-decoration: none;
+                    }
+
+                    &:focus {
+                        color: @primary;
+                        text-decoration: none;
+                    }
+                }
             }
 
             .octicon {
