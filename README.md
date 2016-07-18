@@ -1,9 +1,32 @@
 pruski.github.io
 ================
 
-A React.js application that fetches reposiories from github, then getting Readme's using a proxy service and displays it.
+This is my playground. A place to learn and experiment. Currently it is a React/Redux app utilizing latest ES features and tools.
 
+## Description
 
-This is my React.js playground, the very first React app. If you wish to see some more sophisticated code, please check Angular or Backbone demos.
+### About
 
-Live demo: http://pruski.github.io/
+The page is embedding a Google Document containing my cv and its download link.
+
+### Code
+
+A list of repositories published on my github profile. Contains readme preview and a few other details. Depending on github api and a [proxy service](https://github.com/zeke/github-raw-cors-proxy) availability. 
+
+### Contact
+
+A simple contact form.
+
+## Demo 
+
+http://pruski.github.io/
+
+## What's missing
+
+* tests
+* RWD
+* syntax highlighting
+* container components
+* bit more code separation and abstraction 
+* cv frame caching
+* pre-fetching github data
