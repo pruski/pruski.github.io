@@ -31,3 +31,5 @@ http://pruski.github.io/
 * cv frame caching
 * pre-fetching github data
 * breaking down styles and compiling with webpack
+* animations
+
