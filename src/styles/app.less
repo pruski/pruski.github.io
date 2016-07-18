@@ -228,26 +228,6 @@ body {
     }
 }
 
-.message-sent,
-.error-message {
-    margin-top: 150px;
-    text-align: center;
-
-    h4 {
-        margin-top: 20px;
-    }
-}
-
-.error-message {
-    .fa {
-        margin-right: 8px;
-    }
-
-    h3 {
-        color: @error;
-    }
-}
-
 .repos {
     margin-top: 60px;
     position: relative;
@@ -330,7 +310,27 @@ body {
     }
 }
 
-.message-sent {
+
+.message,
+.error-message {
+    margin-top: 150px;
+    text-align: center;
+
+    h4 {
+        margin-top: 20px;
+    }
+}
+
+.error-message {
+    .fa {
+        margin-right: 8px;
+    }
+
+    h3 {
+        color: @error;
+    }
+}
+.message {
     h4:after {
         font-size: 40px;
         margin-top: 15px;
