@@ -1,6 +1,6 @@
 {
   "name": "pruski.github.io",
-  "version": "0.1.1",
+  "version": "2.0.0",
   "description": "Konrad Pruski - Homepage",
   "main": "js/bundle.js",
   "dependencies": {
