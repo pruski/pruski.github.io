@@ -1,3 +1,4 @@
+import ReactGA from 'react-ga';
 import * as types from "./actionTypes";
 import * as constants from './constants';
 import {getUi} from './reducer';
@@ -19,13 +20,24 @@ export const success = (repos) => ({
 const shouldFetch = state => getUi(state) !== constants.SHOW_REPOS;
 
 const fetch = async dispatch => {
+    ReactGA.event({
+        category: 'Code',
+        action: 'Fetching data'
+    });
+
     dispatch(fetching());
 
     try {
         dispatch(success(await fetchReposFromGithub()));
     }
     catch (e) {
-        dispatch(error())
+        ReactGA.event({
+            category: 'Code',
+            action: 'Fetching failed',
+            label: e.message()
+        });
+
+        dispatch(error());
     }
 };
 
