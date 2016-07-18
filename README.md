@@ -32,4 +32,5 @@ http://pruski.github.io/
 * pre-fetching github data
 * breaking down styles and compiling with webpack
 * animations
+* declare propTypes
 
