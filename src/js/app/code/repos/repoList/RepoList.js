@@ -1,20 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
-export default ({repos}) => (
+export default withRouter(({repos, router: {isActive}}) => (
     <ul className="repo-list">
-        {repos.map(repo => {
-            const icon = repo.parent ? 'octicon-repo-forked' : 'octicon-repo';
+        {repos.map(repo => (
+            <li key={repo.name} className={isActive('code/' + repo.id) ? 'active' : ''}>
+                <span className={'octicon ' + (repo.parent ? 'octicon-repo-forked' : 'octicon-repo')}></span>
 
-            return (
-                <li key={repo.name}>
-                    <span className={'octicon ' + icon}></span>
-
-                    <Link to={'/code/' + repo.id}>
-                        {repo.name}
-                    </Link>
-                </li>
-            )
-        })}
+                <Link to={'/code/' + repo.id}>
+                    {repo.name}
+                </Link>
+            </li>
+        ))}
     </ul>
-);
+));

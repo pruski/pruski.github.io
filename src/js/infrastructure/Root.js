@@ -16,10 +16,12 @@ const Root = ({ store }) => (
     <Provider store={store}>
         <Router history={history}>
             <Route component={App}>
-                <Redirect from="/" to="/about" />
-                <Route name="about" path="/about" component={About} />
-                <Route name="code" path="/code(/:repo)" component={Code} />
-                <Route name="contact" path="/contact" component={Contact} />
+                <Redirect from="/" to="about" />
+                <Route name="about" path="about" component={About} />
+                <Route name="code" path="code" component={Code}>
+                    <Route path=":repo"/>
+                </Route>
+                <Route name="contact" path="contact" component={Contact} />
             </Route>
         </Router>
     </Provider>

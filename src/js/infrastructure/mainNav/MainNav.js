@@ -8,13 +8,13 @@ class MainNav extends Component {
     }
 
     render() {
-        const {router: {isActive}} = this.props;
+        const {router} = this.props;
 
         return (
             <nav className="main-nav">
                 <ul>
                     {routes.map(route =>(
-                            <li key={route} className={isActive(route) ? 'active' : ''}>
+                            <li key={route} className={router.isActive(route) ? 'active' : ''}>
                                 <Link to={route} onClick={() => this.onRouteChange()}>
                                     {route}
                                 </Link>

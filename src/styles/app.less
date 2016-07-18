@@ -256,18 +256,42 @@ body {
         width: @left-col-width;
         list-style: none;
         padding-left: 0;
+        padding-right: 20px;
 
         li {
-            padding: 10px 0;
+            padding: 13px 0;
+            position: relative;
+
+            &:after {
+                border-bottom: 1px solid #ddd;
+                content: ' ';
+                display: block;
+                position: absolute;
+                top: 23px;
+                width: 100%;
+            }
+
+            &.active {
+                &:after {
+                    border-color: #bbb;
+                    border-width: 2px;                }
+            }
 
             .octicon {
                 width: 12px;
-                margin-right: 6px;
+                padding-right: 6px;
                 text-align: center;
+                position: relative;
+                z-index: 1;
+                background: #fff;
             }
 
             a {
                 text-transform: capitalize;
+                background: #fff;
+                z-index: 1;
+                position: relative;
+                padding: 0 10px;
             }
         }
     }
@@ -280,12 +304,12 @@ body {
 
         .panel {
             width: 100%;
-            max-width: 980px;
             margin: 0 auto 40px;
 
             .panel-heading {
                 .octicon {
                     margin-right: 6px;
+                    margin-left: 3px;
                 }
 
                 .panel-title {
