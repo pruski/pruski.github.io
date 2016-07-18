@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import * as constants from './constants';
+import {getUi} from './reducer';
 import {fetchReposFromGithub} from './githubHelper';
 
 export const error = () => ({
@@ -15,7 +16,7 @@ export const success = (repos) => ({
     repos
 });
 
-const shouldFetch = state => state.status !== constants.SHOW_REPOS;
+const shouldFetch = state => getUi(state) !== constants.SHOW_REPOS;
 
 const fetch = async dispatch => {
     dispatch(fetching());

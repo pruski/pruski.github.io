@@ -13,13 +13,13 @@ marked.setOptions({
 });
 
 export default ({details}) => {
-    let content;
-
-    if(details) {
-        content = <div className="markdown-body" dangerouslySetInnerHTML={{__html: marked(details.readme)}}></div>
-    }
-    else {
-        content = <div>Please select a project</div>
+    if(!details) {
+        return (
+            <div className="repo-details message">
+                <h3>A small selection of sample code and utilities.</h3>
+                <h4>Please select a project to view it's readme.</h4>
+            </div>
+        );
     }
 
     return (
@@ -42,7 +42,7 @@ export default ({details}) => {
                     )}
                 </div>
                 <div className="panel-body">
-                    {content}
+                    <div className="markdown-body" dangerouslySetInnerHTML={{__html: marked(details.readme)}}></div>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ class Repos extends Component {
         return (
             <div className="repos">
                 <RepoList repos={repos}/>
-                {selected ? <RepoDetails details={selected}/> : <ErrorMessage>Pleaae select a project</ErrorMessage>}
+                <RepoDetails details={selected}/>
             </div>
         );
     }

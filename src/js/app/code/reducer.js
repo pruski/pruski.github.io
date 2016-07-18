@@ -33,4 +33,5 @@ const code = (state = initialState, action) => {
 
 export default code;
 
+export const getUi = state => state.code.ui;
 export const selectedRepo = (state, id) => state.repos.filter(repo => repo.id === id)[0];
