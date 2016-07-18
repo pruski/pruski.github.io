@@ -15,7 +15,7 @@ export const success = (repos) => ({
     repos
 });
 
-const shouldFetch = state => state.status !== constants.SHOW_PROJECTS;
+const shouldFetch = state => state.status !== constants.SHOW_REPOS;
 
 const fetch = async dispatch => {
     dispatch(fetching());

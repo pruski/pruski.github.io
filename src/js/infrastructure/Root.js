@@ -18,7 +18,7 @@ const Root = ({ store }) => (
             <Route component={App}>
                 <Redirect from="/" to="/about" />
                 <Route name="about" path="/about" component={About} />
-                <Route name="code" path="/code" component={Code} />
+                <Route name="code" path="/code(/:repo)" component={Code} />
                 <Route name="contact" path="/contact" component={Contact} />
             </Route>
         </Router>

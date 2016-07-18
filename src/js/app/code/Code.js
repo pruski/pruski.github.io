@@ -3,15 +3,17 @@ import {connect} from 'react-redux'
 import {HorizontalLoader, ErrorMessage} from 'infrastructure';
 import * as constants from './constants';
 import * as actions from './actions';
+import {selectedRepo} from './reducer';
+import Repos from './repos';
 
-@connect(state => state.code, actions)
+@connect((state, {params: {repo}}) => ({...state.code, selectedRepo: selectedRepo(state.code, repo)}), actions)
 class Code extends Component {
     componentDidMount() {
         this.props.fetchIfNeeded();
     }
     
     render() {
-        const {ui, repos, fetchRepos} = this.props;
+        const {ui, repos, fetchRepos, selectedRepo} = this.props;
 
         let component = null;
 
@@ -28,12 +30,8 @@ class Code extends Component {
                 );
                 break;
 
-            case constants.SHOW_PROJECTS:
-                component = (
-                    <ul>
-                        {repos.map(repo => <li key={repo.name}>{repo.name}</li>)}
-                    </ul>
-                );
+            case constants.SHOW_REPOS:
+                component = <Repos repos={repos} selected={selectedRepo}/>;
                 break;
         }
 

@@ -17,7 +17,7 @@ const code = (state = initialState, action) => {
         case actionTypes.SUCCESS:
             return {
                 repos: action.repos,
-                ui: constnats.SHOW_PROJECTS
+                ui: constnats.SHOW_REPOS
             };
 
         case actionTypes.ERROR:
@@ -32,3 +32,5 @@ const code = (state = initialState, action) => {
 };
 
 export default code;
+
+export const selectedRepo = (state, id) => state.repos.filter(repo => repo.id === id)[0];

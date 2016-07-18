@@ -2,21 +2,27 @@
 @primary-dark: #23527c;
 @error: #c9302c;
 
+@left-col-width: 240px;
+
 *, h1, h2, h3, h4, h5, h6, .btn-link, .btn {
     font-weight: 300;
 }
 
 body {
     padding: 20px;
-}
 
-header {
-    h1 {
-        margin: 0;
+    > header {
+        width: @left-col-width;
+
+        h1 {
+            margin: 0;
+        }
     }
 }
 
 .main-nav {
+    width: @left-col-width;
+
     ul {
         list-style-type: none;
         padding-left: 2px;
@@ -223,22 +229,80 @@ header {
 }
 
 .message-sent,
-.message-failed {
+.error-message {
     margin-top: 150px;
     text-align: center;
-
-    .fa {
-        margin-right: 8px;
-    }
 
     h4 {
         margin-top: 20px;
     }
 }
 
-.message-failed {
+.error-message {
+    .fa {
+        margin-right: 8px;
+    }
+
     h3 {
         color: @error;
+    }
+}
+
+.repos {
+    margin-top: 60px;
+    position: relative;
+
+    .repo-list {
+        width: @left-col-width;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            padding: 10px 0;
+
+            .octicon {
+                width: 12px;
+                margin-right: 6px;
+                text-align: center;
+            }
+
+            a {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .repo-details {
+        position: absolute;
+        left: @left-col-width + 20px;
+        top: 0;
+        right: 0;
+
+        .panel {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto 40px;
+
+            .panel-heading {
+                .octicon {
+                    margin-right: 6px;
+                }
+
+                .panel-title {
+                    a {
+                        font-weight: bold;
+
+                        &:hover {
+                            color: inherit;
+                        }
+
+                        .thin {
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
