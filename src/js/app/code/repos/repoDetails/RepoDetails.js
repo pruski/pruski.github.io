@@ -44,9 +44,7 @@ export default ({details}) => {
                         </span>
                     )}
                 </div>
-                <div className="panel-body">
-                    <div className="markdown-body" dangerouslySetInnerHTML={{__html: marked(details.readme)}}></div>
-                </div>
+                <div className="panel-body markdown-body" dangerouslySetInnerHTML={{__html: marked(details.readme)}}></div>
             </div>
         </div>
     );
