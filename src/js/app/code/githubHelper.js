@@ -1,4 +1,4 @@
-import {fetchJson} from 'utils/fetchHelper';
+import {fetchJson} from 'utils';
 
 const fetchDetails = repoList =>
     Promise.all(repoList.map(repo => fetchRepoDetails(repo)))
