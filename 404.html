@@ -21,7 +21,7 @@
 
         var l = window.location;
         l.replace(
-                l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+                'https://' + l.hostname + (l.port ? ':' + l.port : '') +
                 '/?' + 'redirect=true' +
                 (l.pathname ? '&pathname=' + l.pathname.replace(/\//g, '%2F').replace(/&/g, '%26') : '') +
                 (l.search ? '&query=' + l.search.replace(/\//g, '%2F').replace(/&/g, '%26') : '') +
