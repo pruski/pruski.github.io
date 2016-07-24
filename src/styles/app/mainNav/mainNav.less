@@ -1,0 +1,57 @@
+.main-nav {
+  width: @left-col-width;
+
+  ul {
+    list-style-type: none;
+    padding-left: 2px;
+    font-size: 16px;
+
+    li {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: 12px;
+
+        &:before {
+          margin-right: 10px;
+          content: '//';
+          color: #999;
+        }
+      }
+
+      &.active {
+        a {
+          position: relative;
+
+          &:hover {
+            color: @primary;
+            cursor: default;
+            text-decoration: none;
+          }
+
+          &:after {
+            color: @primary-dark;
+            content: '..';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            margin-left: -6px;
+            font-weight: 300;
+          }
+
+          &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+
+      a {
+        font-size: 19px;
+
+        &:focus {
+          color: @primary;
+        }
+      }
+    }
+  }
+}

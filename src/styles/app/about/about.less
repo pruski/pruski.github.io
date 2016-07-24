@@ -1,0 +1,65 @@
+.about {
+  margin-top: 60px;
+  text-align: center;
+
+  .loader-info {
+    color: #999;
+    font-size: 16px;
+    display: inline-block;
+    padding-top: 18px;
+
+    &:before {
+      margin-right: 4px;
+      content: '//';
+      color: #999;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 1030px;
+    margin: 0 auto;
+    display: block;
+
+    &.hide-frame {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  .download-links {
+    text-align: center;
+    margin: 20px 0;
+
+    a {
+      font-size: 16px;
+
+      &.btn-sm {
+        font-size: 14px;
+      }
+    }
+
+    .fa {
+      margin-left: 8px;
+    }
+
+    .btn-sm {
+      color: #999;
+
+      &:before {
+        margin-right: 4px;
+        content: '//';
+        color: #999;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
