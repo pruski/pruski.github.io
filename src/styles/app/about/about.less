@@ -28,6 +28,10 @@
     }
   }
 
+  .resume-link {
+    display: none;
+  }
+
   .download-links {
     text-align: center;
     margin: 20px 0;
@@ -60,6 +64,31 @@
           text-decoration: underline;
         }
       }
+
+      .fa {
+        display: none;
+      }
+    }
+  }
+
+  .read-cv-link {
+    display: none;
+  }
+
+  @media (max-width: 850px) {
+    iframe {
+      max-width: 560px;
+      max-height: 720px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .resume-link {
+      display: block;
+    }
+
+    .cv-component {
+      display: none;
     }
   }
 }

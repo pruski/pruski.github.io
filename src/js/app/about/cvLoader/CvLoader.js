@@ -3,7 +3,7 @@ import {HorizontalLoader} from 'infrastructure';
 
 export default () => (
     <div>
-        <span className="loader-info">My CV is loading below.</span>
+        <span className="loader-info">My resume is loading below.</span>
         <HorizontalLoader />
     </div>
 )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import CvLink from './cvLink';
 import * as actions from './actions';
 
 @connect(state => ({...state.about.cvDownloader}), actions)
@@ -20,26 +21,12 @@ class CvDownloader extends Component {
                         <span className="fa fa-envelope-o"></span>
                     </Link>
                     
-                    <div>
-                        <a className="btn btn-link btn-sm"
-                           href={`https://docs.google.com/document/export?format=pdf&id=${documentId}`}>
-                            <span>download again</span>
-                        </a>
-                    </div>
+                    <CvLink documentId={documentId} css="btn-sm">download again</CvLink>
                 </div>
             );
 
         }
-        return (
-            <div className="download-links">
-                <a className="btn btn-link"
-                   href={`https://docs.google.com/document/export?format=pdf&id=${documentId}`}
-                   onClick={ () => onDownload() }>
-                    Get a copy
-                    <span className="fa fa-file-pdf-o"></span>
-                </a>
-            </div>
-        );
+        return <CvLink documentId={documentId} clickHandler={() => onDownload()}>Get a copy</CvLink>;
 
     }
 }
