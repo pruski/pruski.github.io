@@ -19,12 +19,11 @@ A simple contact form.
 
 ## Demo 
 
-http://pruski.github.io/
+https://pruski.github.io/
 
 ## What's missing
 
 * tests
-* RWD
 * syntax highlighting
 * container components
 * bit more code separation and abstraction 
