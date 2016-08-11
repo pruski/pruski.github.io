@@ -35,8 +35,9 @@ export default ({details}) => {
                         {' '}
                         updated {formatDuration(details.updated)} ago
                     </span>
+
                     {!details.parent ? '' : (
-                        <span className="panel-title pull-right">
+                        <span className="fork-source panel-title pull-right">
                             forked from <a href={details.parent.url}>
                                 <span className="octicon octicon-repo-forked"></span>
                                 {details.parent.name}
