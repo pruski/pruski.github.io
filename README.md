@@ -29,7 +29,8 @@ https://pruski.github.io/
 * bit more code separation and abstraction 
 * cv frame caching
 * pre-fetching github data
-* breaking down styles and compiling with webpack
+* css hmr
 * animations
 * declare propTypes
+* demos
 
