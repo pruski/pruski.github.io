@@ -41909,22 +41909,18 @@
 	
 	
 	            switch (ui) {
-	                case constants.SHOW_LOADER:
-	                    return React.createElement(HorizontalLoader, null);
-	
+	                case constants.SHOW_LOADER:	
 	                case constants.SHOW_ERROR:
 	                    return React.createElement(
 	                        ErrorMessage,
 	                        null,
-	                        'Please ',
+	                        'Unfortunately a third party service is down. For the time being, please visit ',
 	                        React.createElement(
-	                            'button',
-	                            { onClick: function onClick() {
-	                                    return fetchRepos();
-	                                }, className: 'btn btn-link btn-inline' },
-	                            'try again'
+	                            'a',
+	                            { href: 'https://github.com/pruski' },
+	                            'my GitHub profile'
 	                        ),
-	                        '.'
+	                        ' to view code samples.'
 	                    );
 	
 	                case constants.SHOW_REPOS:
