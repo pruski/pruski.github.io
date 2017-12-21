@@ -3,12 +3,13 @@ const path = require('path');
 module.exports = {
     entry: './src/js/main.js',
     output: {
-        path: './',
+        path: __dirname,
         filename: 'bundle.js'
     },
     resolve: {
-        root: [
-            path.resolve('./src/js')
+        modules: [
+            path.join(__dirname, "src/js"),
+            "node_modules"
         ]
     },
     devServer: {
@@ -22,7 +23,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loaders: ['babel'],
+                loaders: ['babel-loader'],
                 exclude: /node_modules/,
                 include: path.resolve(__dirname, "src/js")
             }
