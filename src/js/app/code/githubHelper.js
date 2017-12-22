@@ -20,10 +20,10 @@ const fetchParent = repo => fetchJson('https://api.github.com/repos/pruski/' + r
         }
     }));
 
-const fetchReadme = repo => fetchJson('https://github-raw-cors-proxy.herokuapp.com/' + repo.full_name + '/' + repo.default_branch + '/README.md')
+const fetchReadme = repo => fetchJson('https://api.github.com/repos/'+ repo.full_name +'/readme')
     .then(readme => ({
         ...formatRepoDetails(repo),
-        readme
+        readme: atob(readme.content)
     }));
 
 const formatRepoDetails = repo => {

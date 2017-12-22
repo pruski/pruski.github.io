@@ -17,10 +17,12 @@ class Code extends Component {
         
         switch(ui) {
             case constants.SHOW_LOADER:
+                return <HorizontalLoader />;
+
             case constants.SHOW_ERROR:
                 return (
                     <ErrorMessage>
-                        Unfortunately a third party service is down. For the time being, please visit <a href="https://github.com/pruski">my GitHub profile</a> to view code samples.
+                        Please <button onClick={() => fetchRepos()} className="btn btn-link btn-inline">try again</button>.
                     </ErrorMessage>
                 );
 
